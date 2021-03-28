@@ -1,0 +1,17 @@
+version: '3.8'
+
+services: 
+  mongo:
+    container_name: Mongo_API
+    image: mongo
+    ports: 
+      - "27017:27017"
+    volumes:
+      - "./data:/data/mongo"
+    networks: 
+      - mongo-network
+
+networks: 
+  mongo-network:
+    driver: bridge
+    
